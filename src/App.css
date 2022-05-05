@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img,
+picture {
+  max-width: 100%;
+  display: inline-block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: var(--clr-dark-grey);
+}
+
+input[type=text] {
+  background-color: var(--clr-grey);
+  background-image: url('./assets/search.png');
+  background-size: 25px;
+  background-position: 1em 1.2em;
+  background-repeat: no-repeat;
+  padding-left: 500px;
+  width: 100%;
+  padding: 1.5em;
+  border-radius: 1em;
+  resize: none;
+}
+
+input[type=submit] {
+  background-color: var(--clr-light-blue);
+  border-radius: 1em;
+  padding: 1.1em;
+  margin-left: -9.5rem;
+  width: 150px;
+  resize: none;
+}
+
+:root {
+  /* colors */
+  --clr-dark: #140f07;
+  --clr-dark-grey: #22283e;
+  --clr-grey: #566093;
+  --clr-light-blue: #96a0f3;
+  --clr-white: #e8edf6;
+}
+
+.bg-dark { background-color: var(--clr-dark);}
+.bg-light { background-color: var(--clr-light-blue));}
+.bg-white { background-color: var(--clr-white);}
+
+.text-dark {color: var(--clr-dark);}
+.text-light {color: var(--clr-light-blue);}
+.text-white {color: var(--clr-white);}
+
+.letter-spacing-1 { letter-spacing: 4.75px; }
+.letter-spacing-2 { letter-spacing: 2.7px; }
+.letter-spacing-3 { letter-spacing: 2.35px; }
+
+.uppercase { text-transform: uppercase; }
+
+.noresize { 
+  resize: none;
+}
+
+.flex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: var(--gap, 1rem);
 }
 
-.App-link {
-  color: #61dafb;
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  width: 100%;
+  height: 350px;
+  border-radius: .9rem;
+}
+
+.box {
+  width: 65%;
+  padding: 3rem;
+  margin: auto;
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: 1rem;
+}
+
+.call-to-action {
+  border: 2px solid lightgreen;
+}
+
+.socialBox  {
+  padding: 10px;
+  border-radius: .5rem;
+  background-color: var(--clr-dark-grey); 
 }
