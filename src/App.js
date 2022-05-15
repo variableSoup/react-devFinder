@@ -14,6 +14,8 @@ function App() {
       await fetch(url)
       .then(res => res.json())
       .then(data => setData(data))
+
+      console.log(data)
     }
 
     getData()
@@ -25,31 +27,29 @@ function App() {
   }
 
   return (
-    <div className='box text-white call-to-action noresize'>
+    <div className=''>
       
-      <div className='flex call-to-action' style={{alignItems: 'center'}}>
-        <h2 style={{marginRight: 'auto'}}>DevFinder</h2>
-        <h4>Light</h4>      
+      <div className=' flex title'>
+        <h2>DevFinder</h2>      
       </div>
       
-      <form className='call-to-action' onSubmit={handleSubmit} style={{marginTop: '25px'}}>
-        <input 
-          style={{paddingLeft: '5em'}}
-          placeholder='username'
-          type='text'
-          onChange={e => {setUsername(e.target.value)}}
-        />
-        <input
-          type="submit"
-          value="Search"
-        />
-      </form>
+      <div className=' flex searchContainer'>
+        <form className='' onSubmit={handleSubmit}>
+          <input 
+            placeholder='Search...'
+            type='text'
+            onChange={e => {setUsername(e.target.value)}}
+           />
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
 
       {data ? 
       <Card
         _profilePic={data?.avatar_url} 
         _username={data?.login} 
         _joinDate={data?.created_at}
+        _gitUrl={data?.html_url}
         _bio={data?.bio}
         _repos={data?.public_repos}
         _followers={data?.followers}
@@ -58,7 +58,7 @@ function App() {
         _location={data?.location}
         _blog={data?.blog_url}
         _organization={data?.organizations_url}
-      /> : <h1>No User Found!</h1>
+      /> : <h1>Click search to begin...</h1>
       }
     </div>
   )

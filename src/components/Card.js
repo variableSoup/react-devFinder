@@ -7,71 +7,65 @@ function Card(props) {
     
     return(
                 
-        <div className='container flex call-to-action noresize' style={{marginTop:'30px', alignContent: 'center', backgroundColor: 'var(--clr-grey)'}}>
+        <div className='grid infoGrid'>
     
-          <div className="call-to-action noresize" style={{marginTop: '25px',}}>
-            <img src={props._profilePic} alt='profile-pic' style={{borderRadius: '50%', width: '165px'}}/>
+          <div className='flex profilePic'>
+            <img src={props._profilePic} alt='profile-pic'/>
           </div>
           
-          <div className="call-to-action" style={{marginTop: '25px'}}>
+          <div className="grid info-section ">
             
-            <div className='flex' style={{alignItems: 'center'}}>
-              <h1 style={{marginRight: 'auto'}}>{props._username}</h1>
-              <h4>{props._joinDate}</h4>
+            <div className='username'>
+              <h1 className=''>{props._username}</h1>
             </div>
             
-            <p style={{marginTop: '2px'}}>@{props._username}</p>
-            <p style={{marginTop: '20px'}}>{props._bio}</p>
+            <h4 style={{fontSize: 'var(--fs-200)', color: 'grey'}}>Created:  {props._joinDate}</h4>
+            <a href={props._gitUrl} style={{marginTop: '2px'}}>@{props._username}</a>
             
-            <div className='flex socialBox call-to-action' style={{marginTop: '25px'}}>
-              
-              <div>
-                <p>Repos</p>
-                <p>{props._repos}</p>
+            <article className="info ">
+              <p className='bio'>{props._bio}</p>
+
+              <div className='flex socialBox '>  
+                  <div>
+                    <p>Repos</p>
+                    <p style={{textAlign: 'center'}}>{props._repos}</p>
+                  </div>
+                  <div>
+                    <p>Followers</p>
+                    <p style={{textAlign: 'center'}}>{props._followers}</p>
+                  </div>
+                  <div>
+                    <p>Folowing</p>
+                    <p style={{textAlign: 'center'}}>{props._following}</p>
+                  </div>
+              </div>
+            </article>
+
+            <article className='info ' style={{justifyContent: 'center'}}>
+
+              <div className='flex ' style={{marginTop: '10px', justifyContent: 'center'}}>
+                <div className='flex'>
+                  <img src={pin} alt='location-icon' style={{width: '25px'}}/>
+                  <p>{}</p>
+                </div>
+                <div className='flex'>
+                  <img src={twitter} alt='twitter-icon' style={{width: '25px'}}/>
+                  <p>{}</p>
+                </div>
               </div>
 
-              <div>
-                <p>Followers</p>
-                <p>{props._followers}</p>
+              <div className='flex' style={{marginTop: '15px', justifyContent: 'center'}}>
+                <div className='flex'>
+                  <img src={link} alt='link-icon' style={{width: '25px'}}/>
+                  <p>{}</p>
+                </div>
+                <div className='flex'>
+                  <img src={company} alt='company-icon' style={{width: '25px'}}/>
+                  <p>{}</p>
+                </div>
               </div>
 
-              <div>
-                <p>Folowing</p>
-                <p>{props._following}</p>
-              </div>
-
-            </div>
-
-            <div className='call-to-action' style={{justifyContent: 'center'}}>
-
-            <div className='flex call-to-action' style={{marginTop: '10px'}}>
-              
-              <div className='flex' style={{marginRight: 'auto'}}>
-                <img src={pin} alt='location-icon' style={{width: '25px'}}/>
-                <p>{props._location}</p>
-              </div>
-
-              <div className='flex'>
-                <img src={twitter} alt='twitter-icon' style={{width: '25px'}}/>
-                <p>{props._twitter}</p>
-              </div>
-            </div>
-
-            
-
-            <div className='flex call-to-action' style={{marginTop: '15px'}}>
-              <div className='flex' style={{marginRight: 'auto'}}>
-                <img src={link} alt='link-icon' style={{width: '25px'}}/>
-                <p>{props._blog}</p>
-              </div>
-
-              <div className='flex'>
-                <img src={company} alt='comopany-icon' style={{width: '25px'}}/>
-                <p>{props._organization}</p>
-              </div>
-            </div>
-
-            </div>
+            </article>
 
           </div>
         </div>
