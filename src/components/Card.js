@@ -9,7 +9,7 @@ function Card(props) {
                 
         <div className='grid infoGrid'>
     
-          <div className='flex profilePic'>
+          <div className='flex profilePic '>
             <img src={props._profilePic} alt='profile-pic'/>
           </div>
           
@@ -20,12 +20,12 @@ function Card(props) {
             </div>
             
             <h4 style={{fontSize: 'var(--fs-200)', color: 'grey'}}>Created:  {props._joinDate}</h4>
-            <a href={props._gitUrl} style={{marginTop: '2px'}}>@{props._username}</a>
+            <a href={props._gitUrl} style={{marginTop: '1px'}}>@{props._username}</a>
             
             <article className="info ">
               <p className='bio'>{props._bio}</p>
 
-              <div className='flex socialBox '>  
+              <div className='flex socialBox'>  
                   <div>
                     <p>Repos</p>
                     <p style={{textAlign: 'center'}}>{props._repos}</p>
@@ -43,7 +43,7 @@ function Card(props) {
 
             <article className='info ' style={{justifyContent: 'center'}}>
 
-              <div className='flex ' style={{marginTop: '10px', justifyContent: 'center'}}>
+              <div className='flex ' style={{justifyContent: 'center'}}>
                 <div className='flex'>
                   <img src={pin} alt='location-icon' style={{width: '25px'}}/>
                   <p>{}</p>

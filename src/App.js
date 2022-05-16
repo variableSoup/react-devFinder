@@ -35,11 +35,11 @@ function App() {
       
       <div className=' flex searchContainer'>
         <form className='' onSubmit={handleSubmit}>
-          <input 
+          <input
             placeholder='Search...'
             type='text'
             onChange={e => {setUsername(e.target.value)}}
-           />
+          />
           <button type="submit"><i class="fa fa-search"></i></button>
         </form>
       </div>
@@ -58,7 +58,7 @@ function App() {
         _location={data?.location}
         _blog={data?.blog_url}
         _organization={data?.organizations_url}
-      /> : <h1>Click search to begin...</h1>
+      /> : <h1  style={{textAlign: 'center', color: 'white'}}>Click search to begin...</h1>
       }
     </div>
   )
