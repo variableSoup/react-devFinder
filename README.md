@@ -1,6 +1,6 @@
 # DevFinder
 
-This GitHub user search app uses the GitHub users API to fetch information on Github users.
+This app uses the GitHub users API to fetch information on Github users.
 
 Users should be able to:
 
